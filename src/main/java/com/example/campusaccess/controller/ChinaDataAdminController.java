@@ -46,4 +46,21 @@ public class ChinaDataAdminController {
         return dataView;
 
     }
+
+    /**
+     * 删除数据根据ID
+     * @param id
+     * @return
+     */
+    @RequestMapping("/china/deleteById")
+    @ResponseBody
+    public DataView deleteById(Integer id){
+        indexService.removeById(id);
+        DataView dataView = new DataView();
+        dataView.setCode(200);
+        dataView.setMsg("删除中国地图数据成功！");
+        return dataView;
+
+
+    }
 }
